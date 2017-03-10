@@ -39,8 +39,34 @@ namespace BankingModel
         //        _name = value; 
         //    }
         //}
-
+        
         public string Name { get; set; }
+        private decimal _balance;
+        public Account()
+        {
+ 
+        }
+        public Account(string name)
+        {
+            Name = name;
+        }
+        public Account(string name , decimal initialbalance)
+        {
+            Name = name;
+            Balance = initialbalance;
+        }
+        public decimal Balance
+        {
+            get { return _balance; }
+            set { if (value > 0.0m) { _balance = value; } }
+        }
+        public void Deposit(decimal depositAmount)
+        {
+            if(depositAmount>0.0m)
+            {
+                Balance += depositAmount;
+            }
+        }
 
     }
 
