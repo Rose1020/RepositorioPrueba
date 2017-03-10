@@ -12,10 +12,11 @@ namespace AccountTest
         static void Main(string[] args)
         {
             Account myAccount = new Account();
+         
+            Console.WriteLine("Ingrese el nombre: ");
+            string thename = Console.ReadLine();
+            myAccount.Name = thename;
             Console.Write("Nombre inicial de la cuenta {0}", myAccount.Name);
-            
-            
-            
         }
     }
 }
